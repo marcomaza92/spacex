@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Content from "@/components/Content";
 import Header from "@/components/Header";
-import { monthsNames } from "utils/monthsNames";
 import Search from "@/components/Search";
 import SearchProvider from "context/search";
 import Link from "next/link";
@@ -10,12 +9,12 @@ import { useContext } from "react";
 import { LaunchesContext } from "context/launches";
 import { mergeData } from "utils/mergeData";
 import { RocketsContext } from "context/rockets";
+import { getLaunches } from "api/launches";
+import { getRockets } from "api/rockets";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const responseLaunches = await fetch('https://api.spacexdata.com/v3/launches');
-  const responseRockets = await fetch('https://api.spacexdata.com/v3/rockets');
-  const launchesData = await responseLaunches.json();
-  const rocketsData = await responseRockets.json();
+  const launchesData = await getLaunches();
+  const rocketsData = await getRockets();
   return {
     props: {
       launchesData,
@@ -38,8 +37,8 @@ const Homepage = (props) => {
   return (
     <SearchProvider>
       <Header />
-      {/* <Search />
-      <Content launches={launches} /> */}
+      <Search />
+      <Content launches={launches} />
       <div>
         {launches && launches.map(({ mission_name, flight_number }, index) => (
           <Link key={index} href={{

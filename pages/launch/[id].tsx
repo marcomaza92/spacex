@@ -1,17 +1,13 @@
 import { useEffect, useState } from "react";
-import Content from "@/components/Content";
-import Header from "@/components/Header";
-import { monthsNames } from "utils/monthsNames";
-import Search from "@/components/Search";
 import { useContext } from "react";
-import { LaunchesContext } from "context/launches";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { RocketsContext } from "context/rockets";
 import { mergeData } from "utils/mergeData";
+import { getLaunch, getLaunches } from "@/api/launches";
+import { getRocket } from "@/api/rockets";
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const responseLaunches = await fetch(`https://api.spacexdata.com/v3/launches`);
-  const launchesData = await responseLaunches.json();
+  const launchesData = await getLaunches();
   const paths = launchesData.map(({ flight_number }) => ({
     params: { id: flight_number.toString() },
   }));
@@ -22,12 +18,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const responseLaunch = await fetch(`https://api.spacexdata.com/v3/launches/${context.params.id}`);
-  const launchData = await responseLaunch.json();
+  const launchData = await getLaunch(context.params.id);
 
   const rocketId = launchData.rocket.rocket_id;
-  const responseRocket = await fetch(`https://api.spacexdata.com/v3/rockets/${rocketId}`);
-  const rocketData = await responseRocket.json();
+  const rocketData = await getRocket(rocketId);
   
   return {
     props: {
@@ -39,19 +33,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const Launch = (props) => {
   const { launchData, rocketData } = props;
-  const { rockets, setRockets } = useContext(RocketsContext);
+  const { rockets } = useContext(RocketsContext);
   const [ launch, setLaunch ] = useState();
-
   useEffect(() => {
     if (rockets[0]?.id === 0) {
-      setRockets(rocketData);
+      mergeData([launchData], [rocketData]);
     }
     mergeData([launchData], [rockets]);
     setLaunch(launchData);
-  });
-
-  console.log(launch);
-
+  }, []);
   return (
     <div>
       <h1>Lala</h1>
