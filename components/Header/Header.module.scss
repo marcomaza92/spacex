@@ -4,7 +4,7 @@
 }
 
 .headerTitle {
-  padding: 0 var(--common-spacing);
+  padding: 0 var(--medium-spacing);
   font-size: 1.5rem;
 }
 
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: var(--common-spacing) 0;
+  padding: var(--medium-spacing) 0;
 }
 
 .headerTabs {
@@ -23,66 +23,19 @@
 .headerTab {
   width: 100%;
   text-align: center;
-  padding: var(--common-spacing);
+  padding: var(--medium-spacing);
   
 }
 
 .headerTab.activeTab {
-  border-bottom: solid 2px var(--tertiary-color-shade-1);
+  border-bottom: solid 2px var(--secondary-color-shade-1);
 }
 
 .headerTabButton {
   border: 0;
   background: transparent;
-  color: var(--tertiary-color-shade-1);
+  color: var(--secondary-color-shade-1);
   font-size: 0.875rem;
-}
-
-.main {
-  background: var(--primary-color);
-}
-
-.search {
-  width: 100%;
-  padding: var(--common-spacing) 0;
-}
-
-.searchBar {
-  position: relative;
-  display: flex;
-  width: calc(100% - 2 * var(--common-spacing));
-  padding: 0 var(--common-spacing);
-  height: 35px;
-}
-
-.searchIcon {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 0.5rem;
-}
-
-.searchInput {
-  width: 100%;
-  background: var(--gradient-search);
-  border-radius: 0;
-  border: 0;
-  color: var(--tertiary-color-shade-2);
-  padding: 0.5rem;
-  padding-left: 2rem;
-  border-radius: 8px;
-}
-
-.content {
-  padding: 0 var(--common-spacing);
-}
-
-.contentCount {
-  font-size: 0.875rem;
-  color: var(--tertiary-color-shade-2);
 }
 
 @media screen and (min-width: 768px) {
