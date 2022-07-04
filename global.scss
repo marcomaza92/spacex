@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #121212;
+  --tertiary-color-shade-1: rgba(255, 255, 255, 0.87);
+  --tertiary-color-shade-2: rgba(255, 255, 255, 0.47);
+  --gradient-header: linear-gradient(180deg, #121212 64.11%, #1E1E1E 100%);
+  --gradient-search: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), #121212;
+  --shadow-header: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+  --primary-font: 'D-DIN', 'Roboto', sans-serif;
+  --common-spacing: 2rem;
+}
+
+body {
+  color: var(--tertiary-color-shade-1);
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
