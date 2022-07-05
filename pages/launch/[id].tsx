@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-import { useContext } from "react";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { RocketsContext } from "context/rockets";
 import { mergeData } from "utils/mergeData";
 import { getLaunch, getLaunches } from "@/api/launches";
 import { getRocket } from "@/api/rockets";

@@ -10,7 +10,7 @@ export const SearchContext = createContext({
 });
 
 interface SearchProviderProps {
-  children: ReactElement[];
+  children: ReactElement;
 }
 
 const SearchProvider: React.FC<SearchProviderProps> = ({ children }) => {

@@ -3,7 +3,6 @@ import Content from "@/components/Content";
 import Header from "@/components/Header";
 import Search from "@/components/Search";
 import SearchProvider from "context/search";
-import Link from "next/link";
 import { GetStaticProps } from "next";
 import { useContext } from "react";
 import { LaunchesContext } from "context/launches";
@@ -25,21 +24,19 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Homepage = (props) => {
   const { launchesData, rocketsData } = props;
-  const { launches, setLaunches } = useContext(LaunchesContext);
+  const { setLaunches } = useContext(LaunchesContext);
   const { setRockets } = useContext(RocketsContext);
   useEffect(() => {
     mergeData(launchesData, rocketsData);
     setRockets(rocketsData);
     setLaunches(launchesData);
   }, []);
-
-  console.log(launches);
   return (
-    <SearchProvider>
+    <>
       <Header />
       <Search />
       <Content />
-    </SearchProvider>
+    </>
   )
 };
 

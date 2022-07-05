@@ -1,6 +1,13 @@
+import { LaunchesContext } from 'context/launches';
+import { useContext } from 'react';
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const { launches, setLaunches } = useContext(LaunchesContext);
+  const showFavorites = () => {
+    
+  }
+
   return (
     <header className={styles.header}>
       <div className={styles.headerLogo}>
@@ -12,7 +19,7 @@ const Header = () => {
           <button className={styles.headerTabButton}>All</button>
         </div>
         <div className={styles.headerTab}>
-          <button className={styles.headerTabButton}>Favorites</button>
+          <button onClick={showFavorites} className={styles.headerTabButton}>Favorites</button>
         </div>
       </div>
     </header>

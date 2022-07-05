@@ -1,3 +1,4 @@
+import { FavoritesContext } from 'context/favorites';
 import { LaunchesContext } from 'context/launches';
 import { SearchContext } from 'context/search';
 import Link from 'next/link';
@@ -6,9 +7,8 @@ import styles from './Content.module.scss';
 
 const Content = () => {
   const { launches } = useContext(LaunchesContext);
-  const { options, setOptions } = useContext(SearchContext);
-
-  const [favorites, setFavorites] = useState([]);
+  const { favorites, setFavorites } = useContext(FavoritesContext);
+  const { options } = useContext(SearchContext);
 
   const handleFavorites = (launch) => {
     if (favorites.includes(launch)) {
