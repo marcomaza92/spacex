@@ -18,8 +18,6 @@ const Content = () => {
     };
   };
 
-  console.log(favorites);
-
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
@@ -30,7 +28,7 @@ const Content = () => {
         <p>Loading...</p>
       ) : (
         <section className={styles.content}>
-          <h3 className={styles.contentCount}>Total ({launches.length})</h3>
+          <h3 className={styles.contentCount}>Total ({options.results === null ? launches.length : options.results})</h3>
 
           {launches.filter(launch => launch.mission_name.includes(options.searchValue)).map((launch, index) => (
             <div key={index} className={styles.launchCard}>

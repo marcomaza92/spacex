@@ -2,6 +2,7 @@ import { createContext, ReactElement, useState } from 'react';
 
 const initialOptions = {
   searchValue: '',
+  results: null,
 };
 
 export const SearchContext = createContext({
