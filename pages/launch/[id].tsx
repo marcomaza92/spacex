@@ -22,6 +22,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const rocketId = launchData.rocket.rocket_id;
   const rocketData = await getRocket(rocketId);
+
+  mergeData([launchData], [rocketData]);
   
   return {
     props: {
@@ -32,19 +34,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Launch = (props) => {
-  const { launchData, rocketData } = props;
-  const { rockets } = useContext(RocketsContext);
-  const [ launch, setLaunch ] = useState();
-  useEffect(() => {
-    if (rockets[0]?.id === 0) {
-      mergeData([launchData], [rocketData]);
-    }
-    mergeData([launchData], [rockets]);
-    setLaunch(launchData);
-  }, []);
+  const { launchData } = props;
+  const { mission_name, details, launch_date_utc, rocket } = launchData;
   return (
     <div>
-      <h1>Lala</h1>
+      <div>
+        <img src={rocket.flickr_images[0]} alt="" />
+        <p>{mission_name}</p>
+        <p>{details}</p>
+        <p>{launch_date_utc}</p>
+      </div>
     </div>
   )
 };

@@ -38,19 +38,7 @@ const Homepage = (props) => {
     <SearchProvider>
       <Header />
       <Search />
-      <Content launches={launches} />
-      <div>
-        {launches && launches.map(({ mission_name, flight_number }, index) => (
-          <Link key={index} href={{
-            pathname: `/launch/[id]`,
-            query: {
-              id: flight_number
-            }
-          }}>
-            <a>{mission_name}</a>
-          </Link>
-        ))}
-      </div>
+      <Content />
     </SearchProvider>
   )
 };
