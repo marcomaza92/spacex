@@ -1,6 +1,10 @@
 .header {
   background: var(--gradient-header);
   box-shadow: var(--shadow-header);
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .headerTitle {

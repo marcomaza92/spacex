@@ -1,9 +1,23 @@
 .main {
   background: var(--primary-color);
+  height: calc(65vh - 2 * var(--medium-spacing));
 }
 
 .content {
   padding: var(--medium-spacing);
+}
+
+.contentEmpty {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contentEmptyTitle,
+.contentEmptySubtitle {
+  margin: 0;
+  padding: var(--small-spacing) 0;
 }
 
 .contentCount {
