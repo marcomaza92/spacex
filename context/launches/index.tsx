@@ -9,7 +9,8 @@ const initialLaunches = [
     rocket: {
       rocket_id: '',
       flickr_images: [],
-    }
+    },
+    isFavorite: false,
   }
 ];
 

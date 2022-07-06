@@ -1,6 +1,7 @@
 import { FavoritesContext } from 'context/favorites';
 import { LaunchesContext } from 'context/launches';
 import { SearchContext } from 'context/search';
+import { SectionsContext } from 'context/sections';
 import { useState } from 'react';
 import { useContext } from 'react';
 import styles from './Header.module.scss';
@@ -8,8 +9,8 @@ import styles from './Header.module.scss';
 const Header = () => {
   const { launches, setLaunches } = useContext(LaunchesContext);
   const { favorites, setFavorites } = useContext(FavoritesContext);
-  const { options, setOptions } = useContext(SearchContext);
-  const [activeList, setActiveList] = useState('all');
+  const { setOptions } = useContext(SearchContext);
+  const { sections, setSections } = useContext(SectionsContext)
   const toggleList = () => {
     setLaunches(favorites);
     setFavorites(launches);
@@ -17,7 +18,7 @@ const Header = () => {
       searchValue: '',
       results: favorites.length
     });
-    activeList === 'all' ? setActiveList('favorites') : setActiveList('all');
+    sections.main === 'all' ? setSections({ main: 'favorites'}) : setSections({ main: 'all'});
   }
 
   return (
@@ -27,11 +28,11 @@ const Header = () => {
       </div>
       <h1 className={styles.headerTitle}>Launches</h1>
       <div className={styles.headerTabs}>
-        <div className={`${styles.headerTab} ${activeList === 'all' ? styles.activeTab : ''}`}>
-          <button onClick={toggleList} className={styles.headerTabButton} disabled={activeList === 'all'}>All</button>
+        <div className={`${styles.headerTab} ${sections.main === 'all' ? styles.activeTab : ''}`}>
+          <button onClick={toggleList} className={styles.headerTabButton} disabled={sections.main === 'all'}>All</button>
         </div>
-        <div className={`${styles.headerTab} ${activeList === 'favorites' ? styles.activeTab : ''}`}>
-          <button onClick={toggleList} className={styles.headerTabButton} disabled={activeList === 'favorites'}>Favorites</button>
+        <div className={`${styles.headerTab} ${sections.main === 'favorites' ? styles.activeTab : ''}`}>
+          <button onClick={toggleList} className={styles.headerTabButton} disabled={sections.main === 'favorites'}>Favorites</button>
         </div>
       </div>
     </header>
