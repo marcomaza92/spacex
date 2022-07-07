@@ -52,7 +52,7 @@ const Content = () => {
             </div>
           ) : (
             <>
-              <h3 className={styles.contentCount}>Total ({options.results === null ? launches.length : options.results})</h3>
+              <h3 data-testid="total-launches" className={styles.contentCount}>Total ({options.results === null ? launches.length : options.results})</h3>
               <section className={styles.content}>
                 {launches.filter(launch => launch.mission_name.includes(options.searchValue)).map((launch, index) => (
                   <div key={index} className={styles.launchCard}>

@@ -2,7 +2,6 @@ import { FavoritesContext } from 'context/favorites';
 import { LaunchesContext } from 'context/launches';
 import { SearchContext } from 'context/search';
 import { SectionsContext } from 'context/sections';
-import { useState } from 'react';
 import { useContext } from 'react';
 import styles from './Header.module.scss';
 
@@ -26,7 +25,7 @@ const Header = () => {
       <div className={styles.headerLogo}>
         <img src='/logo.svg' alt='SpaceX Logo' />
       </div>
-      <h1 className={styles.headerTitle}>Launches</h1>
+      <h1 data-testid="title" className={styles.headerTitle}>Launches</h1>
       <div className={styles.headerTabs}>
         <div className={`${styles.headerTab} ${sections.main === 'all' ? styles.activeTab : ''}`}>
           <button onClick={toggleList} className={styles.headerTabButton} disabled={sections.main === 'all'}>All</button>
