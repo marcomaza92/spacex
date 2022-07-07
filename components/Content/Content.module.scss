@@ -1,6 +1,6 @@
 .main {
   background: var(--primary-color);
-  height: calc(65vh - 2 * var(--medium-spacing));
+  min-height: calc(65vh - 2 * var(--medium-spacing));
 }
 
 .content {

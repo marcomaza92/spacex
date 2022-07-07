@@ -8,17 +8,24 @@
   // Gradients
   --gradient-header: linear-gradient(180deg, rgba(18, 18, 18, 1) 64.11%, rgba(30, 30, 30, 1) 100%);
   --gradient-search: linear-gradient(0deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05)), rgba(18, 18, 18, 1);
+  --gradient-launch: linear-gradient(0.25deg, rgba(0, 0, 0, 0.7) 20.99%, rgba(255, 255, 255, 0) 96.78%);
+  --gradient-button: linear-gradient(0deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.11)), rgba(39, 39, 39, 1);
   --gradient-card: var(--gradient-search);
-
+  --gradient-summary: var(--gradient-search);
+  
   // Shadows
   --shadow-header: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
-
-  --primary-font: 'D-DIN', 'Roboto', sans-serif;
 
   // Spacing
   --small-spacing: 1rem;
   --medium-spacing: 2rem;
   --large-spacing: 4rem;
+
+  // Borders
+  --border-number: rgba(145, 145, 145, 1);
+
+  // Fonts
+  --primary-font: 'D-DIN', 'Roboto', sans-serif;
 }
 
 body {

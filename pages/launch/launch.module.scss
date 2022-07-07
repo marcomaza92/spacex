@@ -1,0 +1,250 @@
+.detail {
+  background-color: var(--primary-color);
+}
+
+.detailHeader {
+  position: relative;
+  min-height: 60vh;
+}
+
+.backButton {
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  position: absolute;
+  top: var(--medium-spacing);
+  left: var(--medium-spacing);
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: var(--gradient-button);
+}
+
+.backButtonContainer {
+  a {
+    color: var(--secondary-color-shade-1);
+    text-decoration: none;
+  }
+}
+
+.detailHeaderImage {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+  }
+}
+
+.detailHeaderDate,
+.detailHeaderName,
+.detailHeaderDescription {
+  padding: 0;
+  padding-bottom: var(--small-spacing);
+  margin: 0;
+}
+
+.detailHeaderDescription {
+  padding-bottom: 0;
+}
+
+.detailHeaderContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 2 * var(--medium-spacing));
+  background: var(--gradient-launch);
+  padding: var(--medium-spacing);
+}
+
+.detailHeaderDate {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--secondary-color-shade-1);
+}
+
+.detailHeaderName {
+  font-size: 1.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--secondary-color-shade-1);
+}
+
+.detailHeaderDescription {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--secondary-color-shade-1);
+}
+
+.detailSummary {
+  background: var(--gradient-summary);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.detailSummary {
+  padding: var(--medium-spacing) 0;
+}
+
+.detailNumber {
+  width: calc(100% / 3);
+  text-align: center;
+  border-right: 1px solid var(--border-number);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:last-of-type {
+    border-right: 0;
+  }
+}
+
+.detailNumberTitle,
+.detailNumberValue {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+
+.detailNumberTitle {
+  font-size: 1.625rem;
+  font-weight: 400;
+  padding-bottom: var(--small-spacing);
+}
+
+.detailNumberValue {
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.detailContent {
+  background: var(--gradient-header);
+  
+}
+
+.detailContentHeader {
+  padding: var(--medium-spacing);
+}
+
+.detailContentHeaderTitle,
+.detailContentHeaderDescription {
+  margin: 0;
+  padding: 0;
+}
+
+.detailContentHeaderTitle {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  padding-bottom: var(--small-spacing);
+}
+
+.detailContentHeaderDescription {
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.detailContentImage {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.detailContentOverview {
+  padding: var(--medium-spacing);
+}
+
+.detailContentOverviewTitle {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  padding-bottom: var(--small-spacing);
+}
+
+.detailContentOverviewList {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.detailContentOverviewListItem {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  padding-bottom: calc(var(--small-spacing) / 2);
+  margin-bottom: calc(var(--small-spacing) / 2);
+  border-bottom: 1px solid var(--secondary-color-shade-2);
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.overviewListItemTitle,
+.overviewListItemValue {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+.overviewListItemTitle {
+  text-transform: uppercase;
+}
+
+.grayText {
+  color: var(--secondary-color-shade-2);
+}
+
+.detailFooter {
+  padding: var(--medium-spacing);
+}
+
+.detailFooterInformation {
+  font-size: 0.75rem;
+  font-size: 400;
+  color: var(--secondary-color-shade-2);
+  padding-bottom: var(--small-spacing);
+}
+
+.mainButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainButtonContainer {
+  margin: 0;
+  padding: 0;
+  margin-bottom: var(--small-spacing);
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.mainButton {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--secondary-color-shade-1);
+  border: 1px solid var(--secondary-color-shade-1);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: var(--small-spacing);
+  
+}
