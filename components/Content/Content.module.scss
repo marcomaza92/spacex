@@ -21,7 +21,7 @@
 }
 
 .contentCount {
-  font-size: 0.875rem;
+  font-size: 0.875em;
   padding: var(--small-spacing) var(--medium-spacing);
   margin: 0;
   color: var(--secondary-color-shade-2);
@@ -54,7 +54,7 @@
 .launchDetails,
 .launchDate {
   margin: 0;
-  padding-bottom: 0.5rem;
+  padding-bottom: calc(var(--small-spacing) / 2);
   color: var(--secondary-color-shade-1);
 }
 
@@ -96,10 +96,21 @@
 }
 
 @media screen and (min-width: 768px) {
-  
+  .main {
+    min-height: calc(60vh - 2 * var(--medium-spacing));
+  }
 }
 
 @media screen and (min-width: 1440px) {
-  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--small-spacing);
+    width: 100%;
+  }
+
+  .launchCard {
+    width: calc(100% / 3 - 2 * var(--small-spacing));
+  }
 }
 

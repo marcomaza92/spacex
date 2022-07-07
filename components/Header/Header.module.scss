@@ -9,7 +9,7 @@
 
 .headerTitle {
   padding: 0 var(--medium-spacing);
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 .headerLogo {
@@ -39,14 +39,19 @@
   border: 0;
   background: transparent;
   color: var(--secondary-color-shade-1);
-  font-size: 0.875rem;
+  font-size: 0.875em;
 }
 
 @media screen and (min-width: 768px) {
-  
+  .header {
+    height: 35vh;
+  }
 }
 
 @media screen and (min-width: 1440px) {
   
+  .headerTabs {
+    width: 30%;
+  }
 }
 
