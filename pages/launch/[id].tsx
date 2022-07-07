@@ -34,7 +34,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 const Launch = (props) => {
   const { launchData } = props;
-  console.log(launchData);
   const { mission_name, details, launch_date_utc, rocket, launch_site, links } = launchData;
   return (
     <section className={styles.detail}>

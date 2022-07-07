@@ -38,8 +38,6 @@ const Content = () => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
-  console.log(launches);
-
   return (
     <main className={styles.main}>
       {launches && launches === [] ? (
